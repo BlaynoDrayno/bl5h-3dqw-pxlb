@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lucky — Play Companion</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Lucky">
+<meta name="theme-color" content="#0e0b09">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+  :root{
+    --bg:#0e0b09; --panel:#1a1512; --panel2:#221a15; --line:#3a2c22;
+    --ink:#ece3d6; --muted:#a4917c; --ember:#ff7a18; --ember2:#ffb454;
+    --gold:#e8c372; --blood:#c0392b; --good:#6fbf73;
+    --safeT:env(safe-area-inset-top,0px); --safeB:env(safe-area-inset-bottom,0px);
+    --topH:148px; --barH:60px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0;background:var(--bg);overscroll-behavior-y:none}
+  body{
+    color:var(--ink);
+    font:16px/1.5 "Iowan Old Style","Palatino Linotype",Georgia,serif;
+    -webkit-font-smoothing:antialiased;
+    background:radial-gradient(900px 600px at 80% -10%, #2a1c12 0%, var(--bg) 60%) fixed;
+  }
+  h1,h2,h3{font-family:Georgia,serif;margin:0}
+  #app{max-width:560px;margin:0 auto;min-height:100vh}
+
+  /* ===== Sticky top ===== */
+  #topbar{position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg,#16100c 75%,rgba(22,16,12,.92));
+    border-bottom:1px solid var(--line);
+    padding:calc(var(--safeT) + 8px) 12px 8px;backdrop-filter:blur(6px)}
+  .idrow{display:flex;align-items:center;gap:10px}
+  .crest{width:42px;height:42px;border-radius:11px;flex:0 0 auto;font-size:24px;
+    display:grid;place-items:center;
+    background:radial-gradient(circle at 40% 30%,var(--ember2),var(--ember) 45%,#6e2a0c 100%);
+    box-shadow:0 0 16px rgba(255,122,24,.45),inset 0 0 12px rgba(0,0,0,.35)}
+  .nm{font-size:18px;color:var(--gold);font-weight:700;line-height:1.1}
+  .nm span{color:var(--muted);font-size:13px;font-weight:400}
+  .sub{color:var(--muted);font-size:11px;font-style:italic}
+  .qstats{margin-left:auto;display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;max-width:46%}
+  .qp{background:#120e0b;border:1px solid var(--line);border-radius:7px;padding:2px 7px;text-align:center;min-width:42px}
+  .qp .k{font-size:8px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
+  .qp .v{font-size:14px;font-weight:700}
+  .qp.hp .v{color:var(--blood)}
+  /* result banner */
+  #banner{margin-top:8px;background:#120e0b;border:1px solid var(--line);border-radius:11px;
+    padding:8px 12px;display:flex;align-items:center;gap:12px;min-height:56px}
+  #bannerNum{font-size:40px;font-weight:800;line-height:1;color:var(--gold);min-width:64px;text-align:center;
+    text-shadow:0 0 18px rgba(255,180,84,.35);transition:.06s;font-variant-numeric:tabular-nums}
+  #bannerNum.crit{color:var(--good);text-shadow:0 0 20px rgba(111,191,115,.6)}
+  #bannerNum.fumble{color:var(--blood);text-shadow:0 0 20px rgba(192,57,43,.6)}
+  #bannerSub{flex:1;min-width:0}
+  #bannerLbl{font-size:13px;color:var(--ink);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #bannerDet{font-size:12px;color:var(--muted);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* advantage segmented */
+  .advseg{display:flex;gap:6px;margin-top:8px}
+  .advseg button{flex:1;min-height:38px;border:1px solid var(--line);background:#120e0b;color:var(--muted);
+    border-radius:9px;font:inherit;font-size:13px;font-weight:700}
+  .advseg button.lit{color:var(--ink);border-color:var(--ember);background:#2a201a;box-shadow:0 0 10px rgba(255,122,24,.3)}
+  .advseg button#advBtn.lit{border-color:var(--good);color:var(--good)}
+  .advseg button#disBtn.lit{border-color:var(--blood);color:#e88}
+
+  /* ===== Main / tabs ===== */
+  main{padding:12px 12px calc(var(--barH) + var(--safeB) + 24px)}
+  section.tab{display:none}
+  section.tab.active{display:block;animation:fade .18s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .card{background:linear-gradient(180deg,var(--panel2),var(--panel));
+    border:1px solid var(--line);border-radius:14px;padding:13px;margin-bottom:13px;
+    box-shadow:0 5px 18px rgba(0,0,0,.5)}
+  .card h2{font-size:13px;text-transform:uppercase;letter-spacing:1.3px;color:var(--ember2);
+    margin-bottom:11px;display:flex;align-items:center;gap:8px}
+  .card h2 .em{font-size:16px}
+  .reset{margin-left:auto;font-size:11px;color:var(--muted);text-decoration:underline;font-weight:400}
+  .mini{font-size:12px;color:var(--muted)}
+  .row{display:flex;align-items:center;gap:8px}
+  .lbl{font-size:13px;color:var(--muted);margin-bottom:5px;display:flex;justify-content:space-between;align-items:center}
+
+  button.btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);
+    border-radius:10px;font:inherit;font-size:15px;min-height:44px;padding:0 12px;transition:.1s;font-weight:600}
+  button.btn:active{transform:scale(.97);background:#2a201a}
+  button.btn.lit{border-color:var(--ember);box-shadow:0 0 10px rgba(255,122,24,.3);color:var(--ember2)}
+  input{font:inherit;font-size:16px;background:#120e0b;border:1px solid var(--line);color:var(--ink);border-radius:9px;padding:9px}
+
+  /* Dice */
+  .diegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .diegrid .btn{font-size:18px;font-weight:800;min-height:56px}
+  .custom{display:flex;gap:8px;margin-top:10px}
+  .custom input{flex:1}
+  .custom .btn{min-width:84px}
+
+  /* Abilities */
+  .abil{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  @media(max-width:360px){.abil{grid-template-columns:1fr 1fr}}
+  .ab{background:#120e0b;border:1px solid var(--line);border-radius:11px;padding:8px;text-align:center}
+  .ab .name{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+  .ab .mod{font-size:24px;font-weight:800;line-height:1.05}
+  .ab .score{font-size:10px;color:var(--muted)}
+  .ab .acts{display:flex;gap:5px;margin-top:7px}
+  .ab .acts .btn{flex:1;min-height:38px;font-size:13px;padding:0}
+  .save-prof{color:var(--gold)}
+  /* Skills */
+  .skill{display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:0 12px;min-height:48px;border:1px solid var(--line);border-radius:10px;
+    background:#120e0b;margin-bottom:7px;cursor:pointer}
+  .skill:active{background:#2a201a}
+  .skill .nmk{font-size:15px}
+  .skill .b{color:var(--gold);font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
+  .skill .exp{font-size:9px;color:var(--ember2);border:1px solid var(--ember);border-radius:4px;padding:0 4px;margin-left:7px;vertical-align:middle}
+
+  /* Attacks */
+  .atk{border:1px solid var(--line);border-radius:11px;padding:10px;margin-bottom:9px;background:#120e0b}
+  .atk .nm{font-weight:700;font-size:16px}
+  .atk .meta{font-size:12px;color:var(--muted);margin-top:2px}
+  .atk .acts{display:flex;gap:8px;margin-top:9px}
+  .atk .acts .btn{flex:1}
+  .toggles{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .toggles .btn{flex:1;min-width:140px}
+
+  /* Vitals */
+  .hpbar{height:18px;border-radius:9px;background:#2a1512;border:1px solid var(--line);overflow:hidden;margin:6px 0}
+  .hpfill{height:100%;background:linear-gradient(90deg,var(--blood),#e5573f);transition:.3s}
+  .hpctrl{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+  .hpctrl .btn{min-height:50px;font-size:16px}
+  .hpctrl .dmg{border-color:#5c2a24;color:#e88}
+  .hpctrl .heal{border-color:#2f5c33;color:var(--good)}
+  .deltarow{display:flex;align-items:center;gap:8px;margin-top:8px;justify-content:center}
+  .deltarow .step{min-width:44px;min-height:44px;font-size:22px;font-weight:800}
+  .deltarow input{width:70px;text-align:center;font-size:20px;font-weight:700}
+  .chips{display:flex;gap:6px;justify-content:center;margin-top:8px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:#120e0b;color:var(--muted);border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;min-height:36px}
+  .temprow{display:flex;align-items:center;gap:8px;margin-top:10px}
+  .temprow input{width:64px;text-align:center}
+
+  .dots{display:flex;gap:8px;flex-wrap:wrap}
+  .dot{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:#160f0b;cursor:pointer;transition:.1s}
+  .dot.on{background:radial-gradient(circle at 40% 35%,var(--ember2),var(--ember));box-shadow:0 0 9px rgba(255,122,24,.5);border-color:var(--ember)}
+  .dot.slot.on{background:radial-gradient(circle at 40% 35%,#9ad,#46f);box-shadow:0 0 9px rgba(70,120,255,.5);border-color:#46f}
+  .dot.sm{width:26px;height:26px}
+  .restrow{display:flex;gap:8px;margin-top:4px}
+  .restrow .btn{flex:1}
+
+  /* Spark / embers */
+  .bond{height:16px;border-radius:8px;background:#0c1420;border:1px solid #1d3a5c;overflow:hidden;margin:6px 0}
+  .bondfill{height:100%;background:linear-gradient(90deg,#2c6fd6,#7fd2ff);box-shadow:0 0 12px rgba(127,210,255,.5);transition:.3s}
+  .embers{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+  .ember{width:40px;height:48px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+    border:1px solid var(--line);background:#160f0b;display:grid;place-items:center;font-size:10px;color:var(--muted)}
+  .ember.mine{background:radial-gradient(circle at 45% 30%,var(--ember2),var(--ember));box-shadow:0 0 14px rgba(255,122,24,.6);border-color:var(--ember);color:#3a1a06}
+  .ember.hand{background:radial-gradient(circle at 45% 30%,#7a2d2d,#3a1414);border-color:#7a2d2d;color:#e8b}
+  .ember.loose{border-style:dashed}
+  .legend{font-size:11px;color:var(--muted);text-align:center}
+
+  /* Quests */
+  .quest{display:flex;gap:10px;align-items:flex-start;padding:9px 6px;font-size:14px;border-bottom:1px solid #271d16}
+  .quest input{margin-top:3px;width:22px;height:22px}
+  .quest.done span{color:var(--muted);text-decoration:line-through}
+
+  /* Log */
+  #log .e{padding:9px 8px;border-bottom:1px solid #271d16;display:flex;justify-content:space-between;gap:8px}
+  #log .e .lt{min-width:0}
+  #log .e .lt b{font-size:14px}
+  #log .e .t{color:var(--muted);font-size:11px;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #log .e .rv{font-weight:800;color:var(--gold);font-size:18px}
+  #log .e.crit .rv{color:var(--good)} #log .e.fumble .rv{color:var(--blood)}
+  .foot{color:var(--muted);font-size:11px;text-align:center;padding:6px 0 2px}
+
+  /* ===== Bottom tab bar ===== */
+  #tabbar{position:fixed;bottom:0;left:0;right:0;z-index:60;max-width:560px;margin:0 auto;
+    display:flex;background:linear-gradient(0deg,#16100c 80%,rgba(22,16,12,.9));
+    border-top:1px solid var(--line);padding-bottom:var(--safeB);backdrop-filter:blur(6px)}
+  #tabbar button{flex:1;min-height:var(--barH);background:none;border:0;color:var(--muted);
+    font:inherit;font-size:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:6px 0}
+  #tabbar button .ic{font-size:21px;line-height:1}
+  #tabbar button.active{color:var(--ember2)}
+  #tabbar button.active .ic{filter:drop-shadow(0 0 8px rgba(255,122,24,.6))}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <header id="topbar">
+    <div class="idrow">
+      <div class="crest">&#128009;</div>
+      <div>
+        <div class="nm">Blayno <span>&ldquo;Lucky&rdquo;</span></div>
+        <div class="sub">Dragonborn Drakewarden &middot; NG &middot; Lv 2</div>
+      </div>
+      <div class="qstats">
+        <div class="qp"><div class="k">AC</div><div class="v">17</div></div>
+        <div class="qp hp"><div class="k">HP</div><div class="v" id="hpMini">22</div></div>
+        <div class="qp"><div class="k">Init</div><div class="v">+5</div></div>
+        <div class="qp"><div class="k">Spd</div><div class="v">30</div></div>
+      </div>
+    </div>
+    <div id="banner">
+      <div id="bannerNum">&mdash;</div>
+      <div id="bannerSub"><div id="bannerLbl">Roll something</div><div id="bannerDet">Tap a die, skill, or attack &mdash; the result shows here.</div></div>
+    </div>
+    <div class="advseg">
+      <button id="advBtn" onclick="toggleAdv('adv')">Advantage</button>
+      <button id="normBtn" class="lit" onclick="toggleAdv('norm')">Normal</button>
+      <button id="disBtn" onclick="toggleAdv('dis')">Disadv.</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- DICE -->
+    <section class="tab active" id="sec-dice">
+      <div class="card">
+        <h2><span class="em">&#127922;</span> Dice Tray</h2>
+        <div class="diegrid">
+          <button class="btn" onclick="rollDie(4)">d4</button>
+          <button class="btn" onclick="rollDie(6)">d6</button>
+          <button class="btn" onclick="rollDie(8)">d8</button>
+          <button class="btn" onclick="rollDie(10)">d10</button>
+          <button class="btn" onclick="rollDie(12)">d12</button>
+          <button class="btn" onclick="rollDie(20)">d20</button>
+          <button class="btn" onclick="rollDie(100)">d100</button>
+          <button class="btn" onclick="rollDie(20)" style="font-size:13px">d20 again</button>
+        </div>
+        <div class="custom">
+          <input id="customExpr" inputmode="text" placeholder="2d6+3, 1d8+5, 4d4" onkeydown="if(event.key==='Enter')rollExpr()">
+          <button class="btn" onclick="rollExpr()">Roll</button>
+        </div>
+        <div class="mini" style="margin-top:8px">The Advantage / Normal / Disadvantage setting at the top applies to all d20 checks, saves &amp; attacks.</div>
+      </div>
+    </section>
+
+    <!-- COMBAT -->
+    <section class="tab" id="sec-combat">
+      <div class="card">
+        <h2><span class="em">&#127993;</span> Attacks</h2>
+        <div class="toggles">
+          <button class="btn" id="hmTog" onclick="toggleHM()">Hunter's Mark +1d6</button>
+          <button class="btn" id="ffTog" onclick="toggleFF()">Favored Foe +1d4</button>
+        </div>
+        <div id="attacks"></div>
+        <div class="mini">Damage buttons auto-add Hunter's Mark / Favored Foe when those toggles are lit.</div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="tab" id="sec-skills">
+      <div class="card">
+        <h2><span class="em">&#9876;</span> Abilities</h2>
+        <div class="abil" id="abil"></div>
+        <div class="mini" style="margin-top:9px">Tap <b>Chk</b> for an ability check, <b>Sv</b> for a save. Gold = proficient save.</div>
+      </div>
+      <div class="card">
+        <h2><span class="em">&#127919;</span> Skills <span class="mini" style="margin-left:auto">tap to roll</span></h2>
+        <div id="skills"></div>
+      </div>
+    </section>
+
+    <!-- VITALS -->
+    <section class="tab" id="sec-vitals">
+      <div class="card">
+        <h2><span class="em">&#10084;&#65039;</span> Hit Points <span class="reset" onclick="resetAll()">reset all</span></h2>
+        <div class="lbl"><span>Hit Points</span><span id="hpText">22 / 22</span></div>
+        <div class="hpbar"><div class="hpfill" id="hpFill" style="width:100%"></div></div>
+        <div class="hpctrl">
+          <button class="btn dmg" onclick="hp(-1)">&minus; Damage</button>
+          <button class="btn heal" onclick="hp(1)">+ Heal</button>
+        </div>
+        <div class="deltarow">
+          <button class="btn step" onclick="bump(-1)">&minus;</button>
+          <input type="number" id="hpDelta" value="1" min="1" inputmode="numeric">
+          <button class="btn step" onclick="bump(1)">+</button>
+        </div>
+        <div class="chips">
+          <button class="chip" onclick="quick(1)">1</button>
+          <button class="chip" onclick="quick(5)">5</button>
+          <button class="chip" onclick="quick(10)">10</button>
+        </div>
+        <div class="temprow"><span class="mini">Temp HP:</span>
+          <input type="number" id="tempHp" value="0" min="0" inputmode="numeric" onchange="save()"></div>
+      </div>
+      <div class="card">
+        <h2><span class="em">&#129704;</span> Hit Dice &amp; Death Saves</h2>
+        <div class="lbl"><span>Hit Dice (d10)</span><span id="hdText">2 / 2</span></div>
+        <div class="dots" id="hitDice"></div>
+        <div class="lbl" style="margin-top:12px"><span>Death Saves</span><span class="mini">&#10003; success &middot; &#10007; fail</span></div>
+        <div class="row" style="flex-wrap:wrap;gap:6px 16px">
+          <div><div class="mini">Successes</div><div class="dots" id="dsSucc" style="margin-top:4px"></div></div>
+          <div><div class="mini">Fails</div><div class="dots" id="dsFail" style="margin-top:4px"></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h2><span class="em">&#10024;</span> Resources</h2>
+        <div class="lbl"><span>Spell Slots &mdash; 1st</span><span class="mini">DC 13 &middot; atk +5</span></div>
+        <div class="dots" id="slots"></div>
+        <div class="lbl" style="margin-top:12px"><span>Favored Foe</span><span class="mini">per long rest</span></div>
+        <div class="dots" id="ff"></div>
+        <div class="lbl" style="margin-top:12px"><span>Breath Weapon (Fire)</span><span class="mini">15-ft cone &middot; DC 12</span></div>
+        <button class="btn" id="breath" onclick="toggleBreath()" style="width:100%">Available</button>
+        <div class="restrow" style="margin-top:12px">
+          <button class="btn" onclick="shortRest()">&#9790; Short Rest</button>
+          <button class="btn" onclick="longRest()">&#9728; Long Rest</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="tab" id="sec-story">
+      <div class="card">
+        <h2><span class="em">&#9889;</span> Spark &mdash; the Drake</h2>
+        <div class="mini">Lightning &middot; 1 day old &middot; imprinted on you. Full Drake Companion unlocks at <b>Level 3</b>.</div>
+        <div class="lbl" style="margin-top:8px"><span>Bond</span><span id="bondText">Deepening</span></div>
+        <div class="bond"><div class="bondfill" id="bondFill"></div></div>
+        <div class="mini">Mystery: his parent was killed &amp; dragged from the Hollow ~3 days ago &mdash; <i>not</i> by the Ashen Hand.</div>
+      </div>
+      <div class="card">
+        <h2><span class="em">&#128293;</span> The Seven Embers</h2>
+        <div class="embers" id="embers"></div>
+        <div class="legend"><span style="color:var(--ember2)">&#9679;</span> yours (1) &nbsp; <span style="color:#c46">&#9679;</span> the Hand (2) &nbsp; <span style="color:var(--muted)">&#9678;</span> loose (4)</div>
+      </div>
+      <div class="card">
+        <h2><span class="em">&#128506;&#65039;</span> Quest Log</h2>
+        <div id="quests"></div>
+      </div>
+    </section>
+
+    <!-- LOG -->
+    <section class="tab" id="sec-log">
+      <div class="card">
+        <h2><span class="em">&#128220;</span> Roll Log <span class="reset" onclick="clearLog()">clear</span></h2>
+        <div id="log"></div>
+      </div>
+      <div class="foot">Embers of the Hollow Crown &middot; Play Companion &middot; state saves on this device. Bound for the <b>Sunken Choir</b>.</div>
+    </section>
+  </main>
+
+  <nav id="tabbar">
+    <button class="active" data-tab="dice" onclick="showTab('dice')"><span class="ic">&#127922;</span>Dice</button>
+    <button data-tab="combat" onclick="showTab('combat')"><span class="ic">&#9876;</span>Combat</button>
+    <button data-tab="skills" onclick="showTab('skills')"><span class="ic">&#127919;</span>Skills</button>
+    <button data-tab="vitals" onclick="showTab('vitals')"><span class="ic">&#10084;</span>Vitals</button>
+    <button data-tab="story" onclick="showTab('story')"><span class="ic">&#128009;</span>Story</button>
+    <button data-tab="log" onclick="showTab('log')"><span class="ic">&#128220;</span>Log</button>
+  </nav>
+</div>
+
+<script>
+/* ============ DATA (from Blayno's sheet) ============ */
+const PB = 2;
+const ABILITIES = [
+  {key:"STR", score:14, mod:2, save:4, saveProf:true},
+  {key:"DEX", score:20, mod:5, save:7, saveProf:true},
+  {key:"CON", score:15, mod:2, save:2, saveProf:false},
+  {key:"INT", score:13, mod:1, save:1, saveProf:false},
+  {key:"WIS", score:17, mod:3, save:3, saveProf:false},
+  {key:"CHA", score:17, mod:3, save:3, saveProf:false},
+];
+const SKILLS = [
+  {n:"Persuasion", b:7, exp:true}, {n:"Stealth", b:7}, {n:"Perception", b:5},
+  {n:"Insight", b:5}, {n:"Animal Handling", b:5}, {n:"Survival", b:5},
+  {n:"Intimidation", b:5}, {n:"Nature", b:3},
+];
+const ATTACKS = [
+  {nm:"Longbow", hit:9, dmg:"1d8+5", type:"piercing", hm:true, note:"range 150/600 - Archery"},
+  {nm:"Shortsword", hit:7, dmg:"1d6+5", type:"piercing", hm:true, note:"finesse, light"},
+  {nm:"Off-hand Shortsword", hit:7, dmg:"1d6", type:"piercing", hm:true, note:"bonus action"},
+  {nm:"Fire Breath", hit:null, dmg:"2d6", type:"fire", hm:false, note:"15-ft cone - DC 12 Dex (half)"},
+];
+const QUESTS = [
+  {t:"Reach the Sunken Choir & claim its ember before the Hand", d:false},
+  {t:"Keep Spark safe", d:false},
+  {t:"Forge the full bond (Level 3)", d:false},
+  {t:"Learn who took Spark's parent", d:false},
+  {t:"Learn to muffle the ember-lodestone", d:false},
+  {t:"Find how to seal the door for good (Maerwyn's loremasters searching)", d:false},
+  {t:"Find the hatchling - Spark", d:true},
+  {t:"Kill Cinderknight Voss", d:true},
+  {t:"Ally with the Warren / Captain Maerwyn", d:true},
+];
+
+/* ============ STATE ============ */
+const DEFAULT = {
+  hp:22, hpMax:22, temp:0, hitDice:2, slots:2, ff:2, breath:true,
+  dsSucc:0, dsFail:0, bond:55, log:[], quests:QUESTS.map(q=>q.d),
+  hm:false, ffActive:false, adv:"norm", tab:"dice"
+};
+let S = load();
+function load(){ try{const r=JSON.parse(localStorage.getItem("blayno_companion_mobile"));return Object.assign({},DEFAULT,r||{});}catch(e){return Object.assign({},DEFAULT);} }
+function save(){ S.temp = +document.getElementById("tempHp").value||0; localStorage.setItem("blayno_companion_mobile", JSON.stringify(S)); }
+
+/* ============ DICE ENGINE ============ */
+function d(sides){ return Math.floor(Math.random()*sides)+1; }
+function parse(expr){
+  expr = expr.replace(/\s+/g,'').toLowerCase();
+  let flat=0, dice=[];
+  const re=/([+-]?)(\d*)d(\d+)|([+-]?\d+)/g; let x;
+  while((x=re.exec(expr))){
+    if(x[3]){ const sign=x[1]==='-'?-1:1; const n=parseInt(x[2]||"1"); dice.push({n,s:parseInt(x[3]),sign}); }
+    else if(x[4]!==undefined){ flat+=parseInt(x[4]); }
+  }
+  return {dice,flat};
+}
+function rollExprRaw(expr){
+  const {dice,flat}=parse(expr); let total=flat, parts=[];
+  dice.forEach(g=>{ for(let i=0;i<g.n;i++){ const r=d(g.s); total+=(g.sign||1)*r; parts.push((g.sign===-1?'-':'')+r); } });
+  return {total, detail:parts.join(' + ')+(flat?` ${flat>=0?'+':'-'} ${Math.abs(flat)}`:'')};
+}
+
+/* ============ ROLL ACTIONS ============ */
+let advMode="norm";
+function setFace(val, lbl, det, cls){
+  const n=document.getElementById("bannerNum"); n.textContent=val; n.className=cls||"";
+  document.getElementById("bannerLbl").textContent=lbl||"";
+  document.getElementById("bannerDet").textContent=det||"";
+}
+function logRoll(label, total, sub, cls){
+  S.log.unshift({label, total, sub, cls:cls||"", t:new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})});
+  S.log=S.log.slice(0,40); save(); renderLog();
+}
+function d20with(mod, label){
+  let r1=d(20), r2=d(20), chosen, used;
+  if(advMode==="adv"){ chosen=Math.max(r1,r2); used=`adv (${r1},${r2})`; }
+  else if(advMode==="dis"){ chosen=Math.min(r1,r2); used=`dis (${r1},${r2})`; }
+  else { chosen=r1; used=`d20 ${r1}`; }
+  const total=chosen+mod;
+  let cls=""; if(chosen===20)cls="crit"; else if(chosen===1)cls="fumble";
+  const sub=`${used} ${mod>=0?'+':'-'} ${Math.abs(mod)} = ${total}` + (cls==="crit"?"  * NAT 20":cls==="fumble"?"  x NAT 1":"");
+  setFace(total, label, sub, cls);
+  logRoll(label, total, sub, cls);
+}
+function rollCheck(key,mod){ d20with(mod, key+" check"); }
+function rollSave(key,mod){ d20with(mod, key+" save"); }
+function rollSkill(n,b){ d20with(b, n); }
+function rollDie(sides){
+  const r=d(sides); let cls=""; if(sides===20&&r===20)cls="crit"; if(sides===20&&r===1)cls="fumble";
+  setFace(r, `d${sides}`, `rolled ${r}`, cls); logRoll(`d${sides}`, r, `rolled ${r}`, cls);
+}
+function rollExpr(){
+  const e=document.getElementById("customExpr").value.trim(); if(!e)return;
+  const {total,detail}=rollExprRaw(e); setFace(total, e, detail); logRoll(e, total, detail);
+}
+function attack(i){
+  const a=ATTACKS[i];
+  if(a.hit===null){
+    const {total,detail}=rollExprRaw(a.dmg);
+    setFace(total, `${a.nm}`, `${a.dmg} ${a.type} - ${a.note}`);
+    logRoll(`${a.nm} dmg`, total, `${detail} ${a.type}`);
+    return;
+  }
+  d20with(a.hit, `${a.nm} to-hit`);
+}
+function damage(i){
+  const a=ATTACKS[i]; let expr=a.dmg, extra=[];
+  if(a.hm && S.hm){ expr+="+1d6"; extra.push("Hunter's Mark"); }
+  if(a.hm && S.ffActive){ expr+="+1d4"; extra.push("Favored Foe"); }
+  const {total,detail}=rollExprRaw(expr);
+  const tag=extra.length?` [${extra.join(", ")}]`:"";
+  setFace(total, `${a.nm} damage`, `${detail} ${a.type}${tag}`);
+  logRoll(`${a.nm} dmg`, total, `${detail} ${a.type}${tag}`);
+}
+
+/* ============ TOGGLES ============ */
+function toggleAdv(m){ advMode=m; S.adv=m; save();
+  ["adv","norm","dis"].forEach(x=>document.getElementById(x+"Btn").classList.toggle("lit",x===m)); }
+function toggleHM(){ S.hm=!S.hm; document.getElementById("hmTog").classList.toggle("lit",S.hm); save(); }
+function toggleFF(){ S.ffActive=!S.ffActive; document.getElementById("ffTog").classList.toggle("lit",S.ffActive); save(); }
+function toggleBreath(){ S.breath=!S.breath; renderBreath(); save(); }
+
+/* ============ VITALS / RESOURCES ============ */
+function bump(dir){ const el=document.getElementById("hpDelta"); el.value=Math.max(1,(+el.value||1)+dir); }
+function quick(v){ document.getElementById("hpDelta").value=v; }
+function hp(dir){
+  const delta=Math.abs(+document.getElementById("hpDelta").value||1);
+  if(dir<0){
+    let dmg=delta, t=+document.getElementById("tempHp").value||0;
+    if(t>0){ const absorbed=Math.min(t,dmg); t-=absorbed; dmg-=absorbed; document.getElementById("tempHp").value=t; S.temp=t; }
+    S.hp=Math.max(0,S.hp-dmg);
+  } else { S.hp=Math.min(S.hpMax,S.hp+delta); }
+  save(); renderVitals();
+}
+function setDots(el, total, on, cb, slot){
+  el.innerHTML="";
+  for(let i=0;i<total;i++){ const dd=document.createElement("div");
+    dd.className="dot"+(i<on?" on":"")+(slot?" slot":"");
+    dd.onclick=()=>cb(i); el.appendChild(dd); }
+}
+function setDeathDots(el, total, on, cb){
+  el.innerHTML="";
+  for(let i=0;i<total;i++){ const dd=document.createElement("div");
+    dd.className="dot sm"+(i<on?" on":"");
+    dd.onclick=()=>cb(i); el.appendChild(dd); }
+}
+function shortRest(){ S.breath=true; renderBreath(); logRoll("Short Rest", "☾", "breath weapon recharged"); save(); }
+function longRest(){ S.hp=S.hpMax; S.slots=2; S.ff=2; S.hitDice=Math.min(2,S.hitDice+1); S.breath=true;
+  S.dsSucc=0; S.dsFail=0; renderAll(); logRoll("Long Rest", "☀", "HP full - slots & Favored Foe restored"); save(); }
+
+/* ============ RENDER ============ */
+function renderAbil(){
+  const el=document.getElementById("abil"); el.innerHTML="";
+  ABILITIES.forEach(a=>{
+    const div=document.createElement("div"); div.className="ab";
+    div.innerHTML=`<div class="name">${a.key}</div>
+      <div class="mod">${a.mod>=0?'+':''}${a.mod}</div>
+      <div class="score">sc ${a.score} - sv ${a.saveProf?'<span class="save-prof">+'+a.save+'</span>':(a.save>=0?'+':'')+a.save}</div>
+      <div class="acts">
+        <button class="btn" onclick="rollCheck('${a.key}',${a.mod})">Chk</button>
+        <button class="btn" onclick="rollSave('${a.key}',${a.save})">Sv</button>
+      </div>`;
+    el.appendChild(div);
+  });
+}
+function renderSkills(){
+  const el=document.getElementById("skills"); el.innerHTML="";
+  SKILLS.forEach(s=>{
+    const div=document.createElement("div"); div.className="skill"; div.onclick=()=>rollSkill(s.n,s.b);
+    div.innerHTML=`<span class="nmk">${s.n}${s.exp?'<span class="exp">EXP</span>':''}</span><span class="b">+${s.b}</span>`;
+    el.appendChild(div);
+  });
+}
+function renderAttacks(){
+  const el=document.getElementById("attacks"); el.innerHTML="";
+  ATTACKS.forEach((a,i)=>{
+    const div=document.createElement("div"); div.className="atk";
+    div.innerHTML=`<div class="nm">${a.nm} ${a.hit!==null?`<span class="meta">+${a.hit} to hit</span>`:''}</div>
+      <div class="meta">${a.dmg} ${a.type} - ${a.note}</div>
+      <div class="acts">
+        ${a.hit!==null?`<button class="btn" onclick="attack(${i})">&#9876; To Hit</button>`:''}
+        <button class="btn" onclick="damage(${i})">&#128293; Damage</button>
+      </div>`;
+    el.appendChild(div);
+  });
+}
+function renderVitals(){
+  document.getElementById("hpText").textContent=`${S.hp} / ${S.hpMax}`+(S.temp>0?` (+${S.temp})`:'');
+  document.getElementById("hpMini").textContent=S.hp+(S.temp>0?'+'+S.temp:'');
+  document.getElementById("hpFill").style.width=(100*S.hp/S.hpMax)+"%";
+  document.getElementById("hdText").textContent=`${S.hitDice} / 2`;
+  setDots(document.getElementById("hitDice"),2,S.hitDice,(i)=>{ S.hitDice=(i+1===S.hitDice)?i:i+1; save(); renderVitals(); });
+  setDeathDots(document.getElementById("dsSucc"),3,S.dsSucc,(i)=>{ S.dsSucc=(i+1===S.dsSucc)?i:i+1; save(); renderVitals(); });
+  setDeathDots(document.getElementById("dsFail"),3,S.dsFail,(i)=>{ S.dsFail=(i+1===S.dsFail)?i:i+1; save(); renderVitals(); });
+  document.getElementById("tempHp").value=S.temp;
+}
+function renderResources(){
+  setDots(document.getElementById("slots"),2,S.slots,(i)=>{ S.slots=(i+1===S.slots)?i:i+1; save(); renderResources(); },true);
+  setDots(document.getElementById("ff"),2,S.ff,(i)=>{ S.ff=(i+1===S.ff)?i:i+1; save(); renderResources(); });
+  renderBreath();
+}
+function renderBreath(){ const b=document.getElementById("breath");
+  b.textContent=S.breath?"Available":"Used - rest to recharge"; b.classList.toggle("lit",S.breath); }
+function renderSpark(){ document.getElementById("bondFill").style.width=S.bond+"%"; }
+function renderEmbers(){
+  const el=document.getElementById("embers"); el.innerHTML="";
+  const layout=["mine","hand","hand","loose","loose","loose","loose"];
+  const labels=["You","Hand","Hand","?","?","?","?"];
+  layout.forEach((c,i)=>{ const e=document.createElement("div"); e.className="ember "+c; e.textContent=labels[i]; el.appendChild(e); });
+}
+function renderQuests(){
+  const el=document.getElementById("quests"); el.innerHTML="";
+  QUESTS.forEach((q,i)=>{
+    const div=document.createElement("div"); div.className="quest"+(S.quests[i]?" done":"");
+    const cb=document.createElement("input"); cb.type="checkbox"; cb.checked=!!S.quests[i];
+    cb.onchange=()=>toggleQuest(i);
+    const sp=document.createElement("span"); sp.textContent=q.t;
+    div.appendChild(cb); div.appendChild(sp); el.appendChild(div);
+  });
+}
+function toggleQuest(i){ S.quests[i]=!S.quests[i]; save(); renderQuests(); }
+function renderLog(){
+  const el=document.getElementById("log"); el.innerHTML="";
+  if(!S.log.length){ el.innerHTML='<div class="mini" style="padding:8px">No rolls yet - tap a die, a skill, or an attack.</div>'; return; }
+  S.log.forEach(e=>{ const d=document.createElement("div"); d.className="e "+(e.cls||"");
+    d.innerHTML=`<div class="lt"><b>${e.label}</b><div class="t">${e.sub}</div></div><div class="rv">${e.total}</div>`;
+    el.appendChild(d); });
+}
+function clearLog(){ S.log=[]; save(); renderLog(); }
+function renderAll(){ renderVitals(); renderResources(); renderSpark(); }
+
+/* ============ TABS ============ */
+function showTab(name){
+  S.tab=name; save();
+  document.querySelectorAll("section.tab").forEach(s=>s.classList.toggle("active",s.id==="sec-"+name));
+  document.querySelectorAll("#tabbar button").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
+  window.scrollTo(0,0);
+}
+
+function resetAll(){ if(confirm("Reset all tracked state to a fresh long rest? (Quest log & roll log are kept.)")){
+  const q=S.quests, log=S.log, tab=S.tab; S=Object.assign({},DEFAULT,{quests:q,log:log,tab:tab}); save(); init(); } }
+
+/* ============ INIT ============ */
+function init(){
+  renderAbil(); renderSkills(); renderAttacks(); renderVitals(); renderResources();
+  renderSpark(); renderEmbers(); renderQuests(); renderLog();
+  advMode=S.adv||"norm"; toggleAdv(advMode);
+  document.getElementById("hmTog").classList.toggle("lit",S.hm);
+  document.getElementById("ffTog").classList.toggle("lit",S.ffActive);
+  showTab(S.tab||"dice");
+}
+init();
+</script>
+</body>
+</html>
