@@ -425,17 +425,17 @@ const DEFAULT = {
 };
 let S = load();
 function load(){
-  let s;
-  try{ s=Object.assign({},DEFAULT,JSON.parse(localStorage.getItem("blayno_companion_mobile"))||{}); }
-  catch(e){ s=Object.assign({},DEFAULT); }
-  if(s.ver!==DEFAULT.ver){
+  let raw=null;
+  try{ raw=JSON.parse(localStorage.getItem("blayno_companion_mobile")); }catch(e){ raw=null; }
+  let s=Object.assign({},DEFAULT,raw||{});
+  if(raw && raw.ver!==DEFAULT.ver){
     /* Level-3 milestone sync: refresh mechanical pools & quest log, keep roll log + prefs */
     s.hp=DEFAULT.hpMax; s.hpMax=DEFAULT.hpMax; s.temp=0;
     s.hitDice=DEFAULT.hitDice; s.slots=DEFAULT.slots; s.ff=DEFAULT.ff; s.breath=true;
     s.drakeHp=DEFAULT.drakeMax; s.drakeMax=DEFAULT.drakeMax;
     s.dsSucc=0; s.dsFail=0; s.bond=DEFAULT.bond; s.quests=QUESTS.map(q=>q.d);
-    s.ver=DEFAULT.ver;
   }
+  s.ver=DEFAULT.ver;
   return s;
 }
 function save(){ S.temp = +document.getElementById("tempHp").value||0; localStorage.setItem("blayno_companion_mobile", JSON.stringify(S)); }
