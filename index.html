@@ -190,11 +190,11 @@
       <div class="crest">&#128009;</div>
       <div>
         <div class="nm">Blayno <span>&ldquo;Lucky&rdquo;</span></div>
-        <div class="sub">Dragonborn Drakewarden &middot; NG &middot; Lv 2</div>
+        <div class="sub">Dragonborn Drakewarden &middot; NG &middot; Lv 3</div>
       </div>
       <div class="qstats">
         <div class="qp"><div class="k">AC</div><div class="v">17</div></div>
-        <div class="qp hp"><div class="k">HP</div><div class="v" id="hpMini">22</div></div>
+        <div class="qp hp"><div class="k">HP</div><div class="v" id="hpMini">34</div></div>
         <div class="qp"><div class="k">Init</div><div class="v">+5</div></div>
         <div class="qp"><div class="k">Spd</div><div class="v">30</div></div>
       </div>
@@ -242,7 +242,37 @@
           <button class="btn" id="ffTog" onclick="toggleFF()">Favored Foe +1d4</button>
         </div>
         <div id="attacks"></div>
-        <div class="mini">Damage buttons auto-add Hunter's Mark / Favored Foe when those toggles are lit.</div>
+        <div class="mini">Damage buttons auto-add Hunter's Mark / Favored Foe when those toggles are lit. <b>Spark's Bite</b> is the drake's own attack &mdash; no Mark.</div>
+      </div>
+      <div class="card">
+        <h2><span class="em">&#128009;</span> Spark &mdash; Drake Companion <span class="mini" style="margin-left:auto">Lv 3</span></h2>
+        <div class="mini" style="margin-bottom:9px">Lightning drake &middot; Medium &middot; summon as an <b>action</b> (1 free / long rest, or spend a spell slot). Shares your initiative; command as a <b>bonus action</b>.</div>
+        <div class="abil" style="grid-template-columns:1fr 1fr 1fr">
+          <div class="ab"><div class="name">AC</div><div class="mod">16</div></div>
+          <div class="ab"><div class="name">Speed</div><div class="mod">40</div></div>
+          <div class="ab"><div class="name">Bite</div><div class="mod">+5</div><div class="score">1d6+2 lightning</div></div>
+        </div>
+        <div class="lbl" style="margin-top:11px"><span>Spark's HP</span><span id="drakeHpText">15 / 15</span></div>
+        <div class="hpbar"><div class="hpfill" id="drakeFill" style="width:100%"></div></div>
+        <div class="hpctrl">
+          <button class="btn dmg" onclick="drakeHp(-1)">&minus; Damage</button>
+          <button class="btn heal" onclick="drakeHp(1)">+ Heal</button>
+        </div>
+        <div class="chips">
+          <button class="chip" onclick="quick(1)">1</button>
+          <button class="chip" onclick="quick(5)">5</button>
+          <button class="chip" onclick="resummonDrake()">Re-summon (full)</button>
+        </div>
+        <div class="mini" style="margin-top:7px">Roll Spark's Bite from the <b>Attacks</b> list above. HP &amp; the delta box are shared with the Damage/Heal stepper.</div>
+      </div>
+      <div class="card">
+        <h2><span class="em">&#10024;</span> Spells &amp; Features <span class="mini" style="margin-left:auto">DC 13 &middot; atk +5</span></h2>
+        <div class="mini" style="line-height:1.75">
+          <b>Spells known (1st):</b> Hunter's Mark &middot; Cure Wounds &middot; <b style="color:var(--ember2)">Ensnaring Strike</b> <i>(new at Lv 3)</i> &mdash; bonus action, restrain a foe on a hit, 1d6/turn, concentration.<br>
+          <b>Cantrip:</b> Thaumaturgy <i>(Draconic Gift)</i>.<br>
+          <b>Primeval Awareness:</b> spend a spell slot to sense aberrations, dragons, fiends, undead &amp; more within 1 mile for 1 min.<br>
+          <b>3 spell slots</b> (1st-level) &middot; <b>Favored Foe</b> 2 / long rest.
+        </div>
       </div>
     </section>
 
@@ -263,7 +293,7 @@
     <section class="tab" id="sec-vitals">
       <div class="card">
         <h2><span class="em">&#10084;&#65039;</span> Hit Points <span class="reset" onclick="resetAll()">reset all</span></h2>
-        <div class="lbl"><span>Hit Points</span><span id="hpText">22 / 22</span></div>
+        <div class="lbl"><span>Hit Points</span><span id="hpText">34 / 34</span></div>
         <div class="hpbar"><div class="hpfill" id="hpFill" style="width:100%"></div></div>
         <div class="hpctrl">
           <button class="btn dmg" onclick="hp(-1)">&minus; Damage</button>
@@ -284,7 +314,7 @@
       </div>
       <div class="card">
         <h2><span class="em">&#129704;</span> Hit Dice &amp; Death Saves</h2>
-        <div class="lbl"><span>Hit Dice (d10)</span><span id="hdText">2 / 2</span></div>
+        <div class="lbl"><span>Hit Dice (d10)</span><span id="hdText">3 / 3</span></div>
         <div class="dots" id="hitDice"></div>
         <div class="lbl" style="margin-top:12px"><span>Death Saves</span><span class="mini">&#10003; success &middot; &#10007; fail</span></div>
         <div class="row" style="flex-wrap:wrap;gap:6px 16px">
@@ -311,15 +341,15 @@
     <section class="tab" id="sec-story">
       <div class="card">
         <h2><span class="em">&#9889;</span> Spark &mdash; the Drake</h2>
-        <div class="mini">Lightning &middot; 1 day old &middot; imprinted on you. Full Drake Companion unlocks at <b>Level 3</b>.</div>
-        <div class="lbl" style="margin-top:8px"><span>Bond</span><span id="bondText">Deepening</span></div>
+        <div class="mini">Lightning drake &middot; <b style="color:var(--ember2)">bonded &amp; online (Level 3)</b>. Walks at your heel now. Summon &amp; full stats in <b>Combat</b>.</div>
+        <div class="lbl" style="margin-top:8px"><span>Bond</span><span id="bondText">Whole</span></div>
         <div class="bond"><div class="bondfill" id="bondFill"></div></div>
-        <div class="mini">Mystery: his parent was killed &amp; dragged from the Hollow ~3 days ago &mdash; <i>not</i> by the Ashen Hand.</div>
+        <div class="mini">Mystery: his parent was killed &amp; dragged from the Hollow ~3 days ago &mdash; <i>not</i> by the Ashen Hand. Still unanswered.</div>
       </div>
       <div class="card">
         <h2><span class="em">&#128293;</span> The Seven Embers</h2>
         <div class="embers" id="embers"></div>
-        <div class="legend"><span style="color:var(--ember2)">&#9679;</span> yours (1) &nbsp; <span style="color:#c46">&#9679;</span> the Hand (2) &nbsp; <span style="color:var(--muted)">&#9678;</span> loose (4)</div>
+        <div class="legend"><span style="color:var(--ember2)">&#9679;</span> yours (2) &nbsp; <span style="color:#c46">&#9679;</span> the Hand (2) &nbsp; <span style="color:var(--muted)">&#9678;</span> loose (3)</div>
       </div>
       <div class="card">
         <h2><span class="em">&#128506;&#65039;</span> Quest Log</h2>
@@ -333,7 +363,7 @@
         <h2><span class="em">&#128220;</span> Roll Log <span class="reset" onclick="clearLog()">clear</span></h2>
         <div id="log"></div>
       </div>
-      <div class="foot">Embers of the Hollow Crown &middot; Play Companion &middot; state saves on this device. Bound for the <b>Sunken Choir</b>.</div>
+      <div class="foot">Embers of the Hollow Crown &middot; Play Companion &middot; state saves on this device. <b>Three doors, one hinge &mdash; a dark moon coming.</b></div>
     </section>
   </main>
 
@@ -368,14 +398,18 @@ const ATTACKS = [
   {nm:"Shortsword", hit:7, dmg:"1d6+5", type:"piercing", hm:true, note:"finesse, light"},
   {nm:"Off-hand Shortsword", hit:7, dmg:"1d6", type:"piercing", hm:true, note:"bonus action"},
   {nm:"Fire Breath", hit:null, dmg:"2d6", type:"fire", hm:false, note:"15-ft cone - DC 12 Dex (half)"},
+  {nm:"Spark's Bite", hit:5, dmg:"1d6+2", type:"lightning", hm:false, note:"drake companion - reach 5 ft"},
 ];
 const QUESTS = [
-  {t:"Reach the Sunken Choir & claim its ember before the Hand", d:false},
+  {t:"Choose the next ember: the Glassmoor (Cinderknight Saelis), the strange eastern door, or the third", d:false},
   {t:"Keep Spark safe", d:false},
-  {t:"Forge the full bond (Level 3)", d:false},
-  {t:"Learn who took Spark's parent", d:false},
+  {t:"Learn who orphaned Spark's parent", d:false},
+  {t:"Uncover what moves under the deep Hollow (the drake's-wing sigil)", d:false},
   {t:"Learn to muffle the ember-lodestone", d:false},
-  {t:"Find how to seal the door for good (Maerwyn's loremasters searching)", d:false},
+  {t:"How to seal the door - 'a voice the dead will follow'; your song is the key", d:true},
+  {t:"Reach the Sunken Choir & claim its ember", d:true},
+  {t:"Forge the full Drakewarden bond (Level 3)", d:true},
+  {t:"Kill Brenna, the Hand's cell-leader at the Choir", d:true},
   {t:"Find the hatchling - Spark", d:true},
   {t:"Kill Cinderknight Voss", d:true},
   {t:"Ally with the Warren / Captain Maerwyn", d:true},
@@ -383,12 +417,27 @@ const QUESTS = [
 
 /* ============ STATE ============ */
 const DEFAULT = {
-  hp:22, hpMax:22, temp:0, hitDice:2, slots:2, ff:2, breath:true,
-  dsSucc:0, dsFail:0, bond:55, log:[], quests:QUESTS.map(q=>q.d),
+  ver:3,
+  hp:34, hpMax:34, temp:0, hitDice:3, slots:3, ff:2, breath:true,
+  drakeHp:15, drakeMax:15,
+  dsSucc:0, dsFail:0, bond:100, log:[], quests:QUESTS.map(q=>q.d),
   hm:false, ffActive:false, adv:"norm", tab:"dice"
 };
 let S = load();
-function load(){ try{const r=JSON.parse(localStorage.getItem("blayno_companion_mobile"));return Object.assign({},DEFAULT,r||{});}catch(e){return Object.assign({},DEFAULT);} }
+function load(){
+  let s;
+  try{ s=Object.assign({},DEFAULT,JSON.parse(localStorage.getItem("blayno_companion_mobile"))||{}); }
+  catch(e){ s=Object.assign({},DEFAULT); }
+  if(s.ver!==DEFAULT.ver){
+    /* Level-3 milestone sync: refresh mechanical pools & quest log, keep roll log + prefs */
+    s.hp=DEFAULT.hpMax; s.hpMax=DEFAULT.hpMax; s.temp=0;
+    s.hitDice=DEFAULT.hitDice; s.slots=DEFAULT.slots; s.ff=DEFAULT.ff; s.breath=true;
+    s.drakeHp=DEFAULT.drakeMax; s.drakeMax=DEFAULT.drakeMax;
+    s.dsSucc=0; s.dsFail=0; s.bond=DEFAULT.bond; s.quests=QUESTS.map(q=>q.d);
+    s.ver=DEFAULT.ver;
+  }
+  return s;
+}
 function save(){ S.temp = +document.getElementById("tempHp").value||0; localStorage.setItem("blayno_companion_mobile", JSON.stringify(S)); }
 
 /* ============ DICE ENGINE ============ */
@@ -494,8 +543,8 @@ function setDeathDots(el, total, on, cb){
     dd.onclick=()=>cb(i); el.appendChild(dd); }
 }
 function shortRest(){ S.breath=true; renderBreath(); logRoll("Short Rest", "☾", "breath weapon recharged"); save(); }
-function longRest(){ S.hp=S.hpMax; S.slots=2; S.ff=2; S.hitDice=Math.min(2,S.hitDice+1); S.breath=true;
-  S.dsSucc=0; S.dsFail=0; renderAll(); logRoll("Long Rest", "☀", "HP full - slots & Favored Foe restored"); save(); }
+function longRest(){ S.hp=S.hpMax; S.slots=3; S.ff=2; S.hitDice=Math.min(3,S.hitDice+1); S.breath=true;
+  S.drakeHp=S.drakeMax; S.dsSucc=0; S.dsFail=0; renderAll(); logRoll("Long Rest", "☀", "HP full - slots, Favored Foe & Spark restored"); save(); }
 
 /* ============ RENDER ============ */
 function renderAbil(){
@@ -537,24 +586,30 @@ function renderVitals(){
   document.getElementById("hpText").textContent=`${S.hp} / ${S.hpMax}`+(S.temp>0?` (+${S.temp})`:'');
   document.getElementById("hpMini").textContent=S.hp+(S.temp>0?'+'+S.temp:'');
   document.getElementById("hpFill").style.width=(100*S.hp/S.hpMax)+"%";
-  document.getElementById("hdText").textContent=`${S.hitDice} / 2`;
-  setDots(document.getElementById("hitDice"),2,S.hitDice,(i)=>{ S.hitDice=(i+1===S.hitDice)?i:i+1; save(); renderVitals(); });
+  document.getElementById("hdText").textContent=`${S.hitDice} / 3`;
+  setDots(document.getElementById("hitDice"),3,S.hitDice,(i)=>{ S.hitDice=(i+1===S.hitDice)?i:i+1; save(); renderVitals(); });
   setDeathDots(document.getElementById("dsSucc"),3,S.dsSucc,(i)=>{ S.dsSucc=(i+1===S.dsSucc)?i:i+1; save(); renderVitals(); });
   setDeathDots(document.getElementById("dsFail"),3,S.dsFail,(i)=>{ S.dsFail=(i+1===S.dsFail)?i:i+1; save(); renderVitals(); });
   document.getElementById("tempHp").value=S.temp;
 }
 function renderResources(){
-  setDots(document.getElementById("slots"),2,S.slots,(i)=>{ S.slots=(i+1===S.slots)?i:i+1; save(); renderResources(); },true);
+  setDots(document.getElementById("slots"),3,S.slots,(i)=>{ S.slots=(i+1===S.slots)?i:i+1; save(); renderResources(); },true);
   setDots(document.getElementById("ff"),2,S.ff,(i)=>{ S.ff=(i+1===S.ff)?i:i+1; save(); renderResources(); });
   renderBreath();
 }
 function renderBreath(){ const b=document.getElementById("breath");
   b.textContent=S.breath?"Available":"Used - rest to recharge"; b.classList.toggle("lit",S.breath); }
 function renderSpark(){ document.getElementById("bondFill").style.width=S.bond+"%"; }
+function drakeHp(dir){ const delta=Math.abs(+document.getElementById("hpDelta").value||1);
+  S.drakeHp=Math.max(0,Math.min(S.drakeMax,S.drakeHp+dir*delta)); save(); renderDrake(); }
+function resummonDrake(){ S.drakeHp=S.drakeMax; save(); renderDrake(); logRoll("Spark summoned","🐉","drake restored to full HP"); }
+function renderDrake(){ const t=document.getElementById("drakeHpText"); if(!t)return;
+  t.textContent=`${S.drakeHp} / ${S.drakeMax}`;
+  document.getElementById("drakeFill").style.width=(100*S.drakeHp/S.drakeMax)+"%"; }
 function renderEmbers(){
   const el=document.getElementById("embers"); el.innerHTML="";
-  const layout=["mine","hand","hand","loose","loose","loose","loose"];
-  const labels=["You","Hand","Hand","?","?","?","?"];
+  const layout=["mine","mine","hand","hand","loose","loose","loose"];
+  const labels=["You","You","Hand","Hand","?","?","?"];
   layout.forEach((c,i)=>{ const e=document.createElement("div"); e.className="ember "+c; e.textContent=labels[i]; el.appendChild(e); });
 }
 function renderQuests(){
@@ -576,7 +631,7 @@ function renderLog(){
     el.appendChild(d); });
 }
 function clearLog(){ S.log=[]; save(); renderLog(); }
-function renderAll(){ renderVitals(); renderResources(); renderSpark(); }
+function renderAll(){ renderVitals(); renderResources(); renderSpark(); renderDrake(); }
 
 /* ============ TABS ============ */
 function showTab(name){
@@ -592,7 +647,7 @@ function resetAll(){ if(confirm("Reset all tracked state to a fresh long rest? (
 /* ============ INIT ============ */
 function init(){
   renderAbil(); renderSkills(); renderAttacks(); renderVitals(); renderResources();
-  renderSpark(); renderEmbers(); renderQuests(); renderLog();
+  renderSpark(); renderDrake(); renderEmbers(); renderQuests(); renderLog();
   advMode=S.adv||"norm"; toggleAdv(advMode);
   document.getElementById("hmTog").classList.toggle("lit",S.hm);
   document.getElementById("ffTog").classList.toggle("lit",S.ffActive);
