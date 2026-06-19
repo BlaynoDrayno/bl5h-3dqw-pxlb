@@ -190,11 +190,11 @@
       <div class="crest">&#128009;</div>
       <div>
         <div class="nm">Blayno <span>&ldquo;Lucky&rdquo;</span></div>
-        <div class="sub">Dragonborn Drakewarden &middot; NG &middot; Lv 3</div>
+        <div class="sub">Dragonborn Drakewarden &middot; NG &middot; Lv 4</div>
       </div>
       <div class="qstats">
         <div class="qp"><div class="k">AC</div><div class="v">17</div></div>
-        <div class="qp hp"><div class="k">HP</div><div class="v" id="hpMini">34</div></div>
+        <div class="qp hp"><div class="k">HP</div><div class="v" id="hpMini">43</div></div>
         <div class="qp"><div class="k">Init</div><div class="v">+5</div></div>
         <div class="qp"><div class="k">Spd</div><div class="v">30</div></div>
       </div>
@@ -245,7 +245,7 @@
         <div class="mini">Damage buttons auto-add Hunter's Mark / Favored Foe when those toggles are lit. <b>Spark's Bite</b> is the drake's own attack &mdash; no Mark.</div>
       </div>
       <div class="card">
-        <h2><span class="em">&#128009;</span> Spark &mdash; Drake Companion <span class="mini" style="margin-left:auto">Lv 3</span></h2>
+        <h2><span class="em">&#128009;</span> Spark / Vaelyx &mdash; Drake Companion <span class="mini" style="margin-left:auto">Lv 4</span></h2>
         <div class="mini" style="margin-bottom:9px">Lightning drake &middot; Medium &middot; summon as an <b>action</b> (1 free / long rest, or spend a spell slot). Shares your initiative; command as a <b>bonus action</b>.</div>
         <div class="abil" style="grid-template-columns:1fr 1fr 1fr">
           <div class="ab"><div class="name">AC</div><div class="mod">16</div></div>
@@ -266,12 +266,12 @@
         <div class="mini" style="margin-top:7px">Roll Spark's Bite from the <b>Attacks</b> list above. HP &amp; the delta box are shared with the Damage/Heal stepper.</div>
       </div>
       <div class="card">
-        <h2><span class="em">&#10024;</span> Spells &amp; Features <span class="mini" style="margin-left:auto">DC 13 &middot; atk +5</span></h2>
+        <h2><span class="em">&#10024;</span> Spells &amp; Features <span class="mini" style="margin-left:auto">DC 14 &middot; atk +6</span></h2>
         <div class="mini" style="line-height:1.75">
           <b>Spells known (1st):</b> Hunter's Mark &middot; Cure Wounds &middot; <b style="color:var(--ember2)">Ensnaring Strike</b> <i>(new at Lv 3)</i> &mdash; bonus action, restrain a foe on a hit, 1d6/turn, concentration.<br>
           <b>Cantrip:</b> Thaumaturgy <i>(Draconic Gift)</i>.<br>
           <b>Primeval Awareness:</b> spend a spell slot to sense aberrations, dragons, fiends, undead &amp; more within 1 mile for 1 min.<br>
-          <b>3 spell slots</b> (1st-level) &middot; <b>Favored Foe</b> 2 / long rest.
+          <b>4 spell slots</b> (1st-level) &middot; <b>Favored Foe</b> 2 / long rest. &middot; <b style="color:var(--ember2)">Lv 4 ASI:</b> Wisdom 17&rarr;18.
         </div>
       </div>
     </section>
@@ -293,7 +293,7 @@
     <section class="tab" id="sec-vitals">
       <div class="card">
         <h2><span class="em">&#10084;&#65039;</span> Hit Points <span class="reset" onclick="resetAll()">reset all</span></h2>
-        <div class="lbl"><span>Hit Points</span><span id="hpText">34 / 34</span></div>
+        <div class="lbl"><span>Hit Points</span><span id="hpText">43 / 43</span></div>
         <div class="hpbar"><div class="hpfill" id="hpFill" style="width:100%"></div></div>
         <div class="hpctrl">
           <button class="btn dmg" onclick="hp(-1)">&minus; Damage</button>
@@ -314,7 +314,7 @@
       </div>
       <div class="card">
         <h2><span class="em">&#129704;</span> Hit Dice &amp; Death Saves</h2>
-        <div class="lbl"><span>Hit Dice (d10)</span><span id="hdText">3 / 3</span></div>
+        <div class="lbl"><span>Hit Dice (d10)</span><span id="hdText">4 / 4</span></div>
         <div class="dots" id="hitDice"></div>
         <div class="lbl" style="margin-top:12px"><span>Death Saves</span><span class="mini">&#10003; success &middot; &#10007; fail</span></div>
         <div class="row" style="flex-wrap:wrap;gap:6px 16px">
@@ -324,7 +324,7 @@
       </div>
       <div class="card">
         <h2><span class="em">&#10024;</span> Resources</h2>
-        <div class="lbl"><span>Spell Slots &mdash; 1st</span><span class="mini">DC 13 &middot; atk +5</span></div>
+        <div class="lbl"><span>Spell Slots &mdash; 1st</span><span class="mini">DC 14 &middot; atk +6</span></div>
         <div class="dots" id="slots"></div>
         <div class="lbl" style="margin-top:12px"><span>Favored Foe</span><span class="mini">per long rest</span></div>
         <div class="dots" id="ff"></div>
@@ -341,15 +341,16 @@
     <section class="tab" id="sec-story">
       <div class="card">
         <h2><span class="em">&#9889;</span> Spark &mdash; the Drake</h2>
-        <div class="mini">Lightning drake &middot; <b style="color:var(--ember2)">bonded &amp; online (Level 3)</b>. Walks at your heel now. Summon &amp; full stats in <b>Combat</b>.</div>
-        <div class="lbl" style="margin-top:8px"><span>Bond</span><span id="bondText">Whole</span></div>
+        <div class="mini">Lightning drake &middot; <b style="color:var(--ember2)">bonded &amp; online (Level 4)</b>. True-named <b>Vaelyx</b> by Vaeltheris &mdash; "the spark the storm kept." Walks at your heel; summon &amp; full stats in <b>Combat</b>.</div>
+        <div class="lbl" style="margin-top:8px"><span>Bond</span><span id="bondText">Whole &amp; deep</span></div>
         <div class="bond"><div class="bondfill" id="bondFill"></div></div>
-        <div class="mini">Mystery: his parent was killed &amp; dragged from the Hollow ~3 days ago &mdash; <i>not</i> by the Ashen Hand. Still unanswered.</div>
+        <div class="mini">His mother's flensed bones laid to rest in the deep Hollow; he carries her <b>storm-scale</b>. Last-lit of the Storm-Mother's line &mdash; and maybe the last free drake-voice.</div>
       </div>
       <div class="card">
         <h2><span class="em">&#128293;</span> The Seven Embers</h2>
         <div class="embers" id="embers"></div>
-        <div class="legend"><span style="color:var(--ember2)">&#9679;</span> yours (2) &nbsp; <span style="color:#c46">&#9679;</span> the Hand (2) &nbsp; <span style="color:var(--muted)">&#9678;</span> loose (3)</div>
+        <div class="legend"><span style="color:var(--ember2)">&#9679;</span> yours (5) &nbsp; <span style="color:#c46">&#9679;</span> the Hand (2) &nbsp; <span style="color:var(--muted)">&#9678;</span> loose (0)</div>
+        <div class="mini" style="margin-top:7px"><b>No loose embers left</b> &mdash; the doomsday math is broken in your favor. The war turns on the <b>Voice</b> now, and on <b>Aescheld</b>. Strands woven: <b>2 of 3</b> (human + drake) &mdash; last is the <b>kings' line</b>.</div>
       </div>
       <div class="card">
         <h2><span class="em">&#128506;&#65039;</span> Quest Log</h2>
@@ -363,7 +364,7 @@
         <h2><span class="em">&#128220;</span> Roll Log <span class="reset" onclick="clearLog()">clear</span></h2>
         <div id="log"></div>
       </div>
-      <div class="foot">Embers of the Hollow Crown &middot; Play Companion &middot; state saves on this device. <b>Three doors, one hinge &mdash; a dark moon coming.</b></div>
+      <div class="foot">Embers of the Hollow Crown &middot; Play Companion &middot; state saves on this device. <b>Five embers held &middot; two of three strands &mdash; find the kings' line, then Aescheld.</b></div>
     </section>
   </main>
 
@@ -385,12 +386,12 @@ const ABILITIES = [
   {key:"DEX", score:20, mod:5, save:7, saveProf:true},
   {key:"CON", score:15, mod:2, save:2, saveProf:false},
   {key:"INT", score:13, mod:1, save:1, saveProf:false},
-  {key:"WIS", score:17, mod:3, save:3, saveProf:false},
+  {key:"WIS", score:18, mod:4, save:4, saveProf:false},
   {key:"CHA", score:17, mod:3, save:3, saveProf:false},
 ];
 const SKILLS = [
-  {n:"Persuasion", b:7, exp:true}, {n:"Stealth", b:7}, {n:"Perception", b:5},
-  {n:"Insight", b:5}, {n:"Animal Handling", b:5}, {n:"Survival", b:5},
+  {n:"Persuasion", b:7, exp:true}, {n:"Stealth", b:7}, {n:"Perception", b:6},
+  {n:"Insight", b:6}, {n:"Animal Handling", b:6}, {n:"Survival", b:6},
   {n:"Intimidation", b:5}, {n:"Nature", b:3},
 ];
 const ATTACKS = [
@@ -401,24 +402,23 @@ const ATTACKS = [
   {nm:"Spark's Bite", hit:5, dmg:"1d6+2", type:"lightning", hm:false, note:"drake companion - reach 5 ft"},
 ];
 const QUESTS = [
-  {t:"Choose the next ember: the Glassmoor (Cinderknight Saelis), the strange eastern door, or the third", d:false},
-  {t:"Keep Spark safe", d:false},
-  {t:"Learn who orphaned Spark's parent", d:false},
-  {t:"Uncover what moves under the deep Hollow (the drake's-wing sigil)", d:false},
-  {t:"Learn to muffle the ember-lodestone", d:false},
-  {t:"How to seal the door - 'a voice the dead will follow'; your song is the key", d:true},
-  {t:"Reach the Sunken Choir & claim its ember", d:true},
-  {t:"Forge the full Drakewarden bond (Level 3)", d:true},
-  {t:"Kill Brenna, the Hand's cell-leader at the Choir", d:true},
-  {t:"Find the hatchling - Spark", d:true},
-  {t:"Kill Cinderknight Voss", d:true},
-  {t:"Ally with the Warren / Captain Maerwyn", d:true},
+  {t:"Find the kings' line - the last seal-strand (2 of 3 woven)", d:false},
+  {t:"Turn toward Aescheld - the crown's throne-seat, now on the map", d:false},
+  {t:"Be there at the end, alive, and sing the door shut (you are the Voice)", d:false},
+  {t:"Keep Spark / Vaelyx safe", d:false},
+  {t:"Carry it home to the Warren; rally the sworn (Vaeltheris, the freed drake, Saelis)", d:false},
+  {t:"The Glassmoor - turned Saelis, sang the last loose ember home (5th ember; Lv 4)", d:true},
+  {t:"Aldermere / the eastern door - human strand, the ember, let Elsie rest", d:true},
+  {t:"The Drake-Graveyard - freed a drake, broke the Gravesinger, found Aescheld's route", d:true},
+  {t:"The Cold North / Vaeltheris - drake strand, named Spark 'Vaelyx', her ember", d:true},
+  {t:"The Sunken Choir - 4th ember; Level 3; Spark bonded; killed Brenna", d:true},
+  {t:"Find the hatchling - Spark · Kill Voss · Ally with the Warren", d:true},
 ];
 
 /* ============ STATE ============ */
 const DEFAULT = {
-  ver:3,
-  hp:34, hpMax:34, temp:0, hitDice:3, slots:3, ff:2, breath:true,
+  ver:4,
+  hp:43, hpMax:43, temp:0, hitDice:4, slots:4, ff:2, breath:true,
   drakeHp:15, drakeMax:15,
   dsSucc:0, dsFail:0, bond:100, log:[], quests:QUESTS.map(q=>q.d),
   hm:false, ffActive:false, adv:"norm", tab:"dice"
@@ -429,7 +429,7 @@ function load(){
   try{ raw=JSON.parse(localStorage.getItem("blayno_companion_mobile")); }catch(e){ raw=null; }
   let s=Object.assign({},DEFAULT,raw||{});
   if(raw && raw.ver!==DEFAULT.ver){
-    /* Level-3 milestone sync: refresh mechanical pools & quest log, keep roll log + prefs */
+    /* Level-4 milestone sync: refresh mechanical pools & quest log, keep roll log + prefs */
     s.hp=DEFAULT.hpMax; s.hpMax=DEFAULT.hpMax; s.temp=0;
     s.hitDice=DEFAULT.hitDice; s.slots=DEFAULT.slots; s.ff=DEFAULT.ff; s.breath=true;
     s.drakeHp=DEFAULT.drakeMax; s.drakeMax=DEFAULT.drakeMax;
@@ -543,7 +543,7 @@ function setDeathDots(el, total, on, cb){
     dd.onclick=()=>cb(i); el.appendChild(dd); }
 }
 function shortRest(){ S.breath=true; renderBreath(); logRoll("Short Rest", "☾", "breath weapon recharged"); save(); }
-function longRest(){ S.hp=S.hpMax; S.slots=3; S.ff=2; S.hitDice=Math.min(3,S.hitDice+1); S.breath=true;
+function longRest(){ S.hp=S.hpMax; S.slots=4; S.ff=2; S.hitDice=Math.min(4,S.hitDice+2); S.breath=true;
   S.drakeHp=S.drakeMax; S.dsSucc=0; S.dsFail=0; renderAll(); logRoll("Long Rest", "☀", "HP full - slots, Favored Foe & Spark restored"); save(); }
 
 /* ============ RENDER ============ */
@@ -573,87 +573,4 @@ function renderAttacks(){
   const el=document.getElementById("attacks"); el.innerHTML="";
   ATTACKS.forEach((a,i)=>{
     const div=document.createElement("div"); div.className="atk";
-    div.innerHTML=`<div class="nm">${a.nm} ${a.hit!==null?`<span class="meta">+${a.hit} to hit</span>`:''}</div>
-      <div class="meta">${a.dmg} ${a.type} - ${a.note}</div>
-      <div class="acts">
-        ${a.hit!==null?`<button class="btn" onclick="attack(${i})">&#9876; To Hit</button>`:''}
-        <button class="btn" onclick="damage(${i})">&#128293; Damage</button>
-      </div>`;
-    el.appendChild(div);
-  });
-}
-function renderVitals(){
-  document.getElementById("hpText").textContent=`${S.hp} / ${S.hpMax}`+(S.temp>0?` (+${S.temp})`:'');
-  document.getElementById("hpMini").textContent=S.hp+(S.temp>0?'+'+S.temp:'');
-  document.getElementById("hpFill").style.width=(100*S.hp/S.hpMax)+"%";
-  document.getElementById("hdText").textContent=`${S.hitDice} / 3`;
-  setDots(document.getElementById("hitDice"),3,S.hitDice,(i)=>{ S.hitDice=(i+1===S.hitDice)?i:i+1; save(); renderVitals(); });
-  setDeathDots(document.getElementById("dsSucc"),3,S.dsSucc,(i)=>{ S.dsSucc=(i+1===S.dsSucc)?i:i+1; save(); renderVitals(); });
-  setDeathDots(document.getElementById("dsFail"),3,S.dsFail,(i)=>{ S.dsFail=(i+1===S.dsFail)?i:i+1; save(); renderVitals(); });
-  document.getElementById("tempHp").value=S.temp;
-}
-function renderResources(){
-  setDots(document.getElementById("slots"),3,S.slots,(i)=>{ S.slots=(i+1===S.slots)?i:i+1; save(); renderResources(); },true);
-  setDots(document.getElementById("ff"),2,S.ff,(i)=>{ S.ff=(i+1===S.ff)?i:i+1; save(); renderResources(); });
-  renderBreath();
-}
-function renderBreath(){ const b=document.getElementById("breath");
-  b.textContent=S.breath?"Available":"Used - rest to recharge"; b.classList.toggle("lit",S.breath); }
-function renderSpark(){ document.getElementById("bondFill").style.width=S.bond+"%"; }
-function drakeHp(dir){ const delta=Math.abs(+document.getElementById("hpDelta").value||1);
-  S.drakeHp=Math.max(0,Math.min(S.drakeMax,S.drakeHp+dir*delta)); save(); renderDrake(); }
-function resummonDrake(){ S.drakeHp=S.drakeMax; save(); renderDrake(); logRoll("Spark summoned","🐉","drake restored to full HP"); }
-function renderDrake(){ const t=document.getElementById("drakeHpText"); if(!t)return;
-  t.textContent=`${S.drakeHp} / ${S.drakeMax}`;
-  document.getElementById("drakeFill").style.width=(100*S.drakeHp/S.drakeMax)+"%"; }
-function renderEmbers(){
-  const el=document.getElementById("embers"); el.innerHTML="";
-  const layout=["mine","mine","hand","hand","loose","loose","loose"];
-  const labels=["You","You","Hand","Hand","?","?","?"];
-  layout.forEach((c,i)=>{ const e=document.createElement("div"); e.className="ember "+c; e.textContent=labels[i]; el.appendChild(e); });
-}
-function renderQuests(){
-  const el=document.getElementById("quests"); el.innerHTML="";
-  QUESTS.forEach((q,i)=>{
-    const div=document.createElement("div"); div.className="quest"+(S.quests[i]?" done":"");
-    const cb=document.createElement("input"); cb.type="checkbox"; cb.checked=!!S.quests[i];
-    cb.onchange=()=>toggleQuest(i);
-    const sp=document.createElement("span"); sp.textContent=q.t;
-    div.appendChild(cb); div.appendChild(sp); el.appendChild(div);
-  });
-}
-function toggleQuest(i){ S.quests[i]=!S.quests[i]; save(); renderQuests(); }
-function renderLog(){
-  const el=document.getElementById("log"); el.innerHTML="";
-  if(!S.log.length){ el.innerHTML='<div class="mini" style="padding:8px">No rolls yet - tap a die, a skill, or an attack.</div>'; return; }
-  S.log.forEach(e=>{ const d=document.createElement("div"); d.className="e "+(e.cls||"");
-    d.innerHTML=`<div class="lt"><b>${e.label}</b><div class="t">${e.sub}</div></div><div class="rv">${e.total}</div>`;
-    el.appendChild(d); });
-}
-function clearLog(){ S.log=[]; save(); renderLog(); }
-function renderAll(){ renderVitals(); renderResources(); renderSpark(); renderDrake(); }
-
-/* ============ TABS ============ */
-function showTab(name){
-  S.tab=name; save();
-  document.querySelectorAll("section.tab").forEach(s=>s.classList.toggle("active",s.id==="sec-"+name));
-  document.querySelectorAll("#tabbar button").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
-  window.scrollTo(0,0);
-}
-
-function resetAll(){ if(confirm("Reset all tracked state to a fresh long rest? (Quest log & roll log are kept.)")){
-  const q=S.quests, log=S.log, tab=S.tab; S=Object.assign({},DEFAULT,{quests:q,log:log,tab:tab}); save(); init(); } }
-
-/* ============ INIT ============ */
-function init(){
-  renderAbil(); renderSkills(); renderAttacks(); renderVitals(); renderResources();
-  renderSpark(); renderDrake(); renderEmbers(); renderQuests(); renderLog();
-  advMode=S.adv||"norm"; toggleAdv(advMode);
-  document.getElementById("hmTog").classList.toggle("lit",S.hm);
-  document.getElementById("ffTog").classList.toggle("lit",S.ffActive);
-  showTab(S.tab||"dice");
-}
-init();
-</script>
-</body>
-</html>
+    div.innerHTML=`<div class="nm">${a.nm} ${a.hit!==null?`<span class="meta">+${a.hit} to hit<
